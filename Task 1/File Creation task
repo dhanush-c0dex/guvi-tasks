@@ -1,0 +1,4 @@
+Image 1 - Cretaed a folder and navigated into it.
+Image 2 - Created a file and displayed the content inside the text file.
+Image 3 - Created another file, displayed the content and then concatenated the content of ""another_file.txt"" to ""my_file.txt"" and display the updated content.
+Image 4 - Created 20 files with .txt extensions and renamed the first 5 files to .yml extension and Printed the latest created top 5 files among the total no of files
