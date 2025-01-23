@@ -1,1 +1,1 @@
-
+Created a file with .txt extension (/home/demo.txt). Changed the permission set of that file, so that any user can read it, group can read/write & owner can read/write/execute it.
