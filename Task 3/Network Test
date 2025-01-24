@@ -1,3 +1,18 @@
 Get the IP address of a particular domain (guvi.in). How do I find my CPU/memory usage of my server?. Test the connectivity between 2 nodes?
+Image 1,2,3,4.
+
 
 I have deployed an application in guvi.com:9000, and logs show my app is running, but I’m unable to view the page. Check whether my port is open or not ?
+
+It appears that port 9000 is not open or accessible on the server, the attached image 5 shows why :
+No service is listening on port 9000:
+
+    The netstat command did not show any process listening on port 9000, which indicates that either the application is not running or it's not properly configured to listen on that port.
+
+Unable to connect to the port externally:
+
+    The telnet command shows that there was no successful connection to guvi.com on port 9000. The connection attempt times out, which suggests the port might be blocked by a firewall or the application is not running.
+
+No HTTP response:
+
+    The curl command returned no response, confirming that there is no service actively responding on port 9000.
