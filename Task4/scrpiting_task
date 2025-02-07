@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# URL to check
+URL="https://guvi.in"
+
+# Fetch the HTTP status code, following redirects
+HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" -L "$URL")
+
+# Print the HTTP status code
+echo "HTTP Status Code: $HTTP_CODE"
+
+# Check the HTTP status code and print a message
+if [[ "$HTTP_CODE" -eq 200 ]]; then
+    echo "Success: The website is up and running."
+elif [[ "$HTTP_CODE" -eq 301 ]] || [[ "$HTTP_CODE" -eq 302 ]]; then
+    echo "Redirect: The website is permanently moved (HTTP $HTTP_CODE)."
+elif [[ "$HTTP_CODE" -eq 404 ]]; then
+    echo "Failure: The requested page was not found."
+elif [[ "$HTTP_CODE" -eq 500 ]]; then
+    echo "Failure: Internal Server Error."
+else
+    echo "Failure: The website returned an HTTP error code: $HTTP_CODE"
+fi
